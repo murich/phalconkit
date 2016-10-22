@@ -6,7 +6,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Murich\\Phalconkit\\Model\\": "src/"
+            "Murich\\Phalconkit\\Model\\": "src/",
+            "files": [
+                "src/constants.php"
+            ]
         }
     },
     "license": "MIT",
