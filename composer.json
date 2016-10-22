@@ -1,0 +1,20 @@
+{
+    "name": "murich/phalconkit",
+    "type": "library",
+    "require": {
+        "gabordemooij/redbean": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Murich\\Phalconkit\\Model\\": "src/",
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Murashkin",
+            "email": "andrey@phpteam.pro"
+        }
+    ],
+    "minimum-stability": "dev"
+}
