@@ -7,7 +7,7 @@ trait BeanstalkRedbean
 {
     protected static $noJobsSleepInterval = 300;
 
-    /** @var  Phalcon\Queue\Beanstalk */
+    /** @var  \Phalcon\Queue\Beanstalk */
     protected $queue;
 
     /** @var  \Murich\Phalconkit\Model\RedbeanInit */
