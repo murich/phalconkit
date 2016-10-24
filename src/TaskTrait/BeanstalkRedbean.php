@@ -2,6 +2,7 @@
 
 namespace Murich\Phalconkit\TaskTrait;
 
+use RedBeanPHP\R;
 
 trait BeanstalkRedbean
 {
@@ -10,9 +11,6 @@ trait BeanstalkRedbean
     /** @var  \Phalcon\Queue\Beanstalk */
     protected $queue;
 
-    /** @var  \Murich\Phalconkit\Model\RedbeanInit */
-    protected $redbeanInit;
-
     protected function haveJobs()
     {
         return (bool) $this->queue->peekReady();
@@ -20,7 +18,7 @@ trait BeanstalkRedbean
 
     protected function noJobs()
     {
-        $this->redbeanInit->close();
+        R::close();
         sleep(static::$noJobsSleepInterval);
     }
 
@@ -30,13 +28,5 @@ trait BeanstalkRedbean
     public function setQueue(\Phalcon\Queue\Beanstalk $queue)
     {
         $this->queue = $queue;
-    }
-
-    /**
-     * @param \Murich\Phalconkit\Model\RedbeanInit $redbeanInit
-     */
-    public function setRedbeanInit($redbeanInit)
-    {
-        $this->redbeanInit = $redbeanInit;
     }
 }
